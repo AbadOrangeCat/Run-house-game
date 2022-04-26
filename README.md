@@ -1,14 +1,4 @@
 # KalahStandardStarter
-
-The starter kit for the standard version of Kalah.
-
-**Note** This repo is set up to run a continuous integration (CI) workflow on
-any **push to the `submission` branch** only (not to any other branch). It is
-*highly* recommended that you do your development on a different branch
-(e.g. `main`) and run the tests locally (using the `Makefile` or your
-IDE). When you want to "submit" and confirm that your tests still pass on the
-CI workflow, you merge your development branch with the `submission` branch.
-
 ## README Contents
 
 1. Repository Contents
