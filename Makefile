@@ -6,12 +6,13 @@
 # Windows, at minimum "/" has to be replaced by "\" and ":" (colon) has to 
 # be replaced by ";" (semicolon). Other changes may be necessary.
 
+
 tests: compile
-	java -cp resources/junit-3.8.2.jar:resources/kalah20200717.jar:bin junit.textui.TestRunner kalah.test.TestKalah
+ 	java -cp resources/junit-3.8.2.jar:resources/kalah-compsci701-a2-20210731.jar:bin junit.textui.TestRunner kalah.test.TestKalahCOMPSCI701A2
 
 play: compile
-	java -cp resources/junit-3.8.2.jar:resources/kalah20200717.jar:bin kalah.Kalah
-  
+ 	java -cp resources/junit-3.8.2.jar:resources/kalah-compsci701-a2-20210731.jar:bin kalah.Kalah
+  
 compile:
-	mkdir -p bin
-	javac -d bin -cp resources/junit-3.8.2.jar:resources/kalah20200717.jar:bin:src src/kalah/Kalah.java
+ 	mkdir -p bin
+ 	javac -d bin -cp resources/junit-3.8.2.jar:resources/kalah-compsci701-a2-20210731.jar:bin:src src/kalah/Kalah.java

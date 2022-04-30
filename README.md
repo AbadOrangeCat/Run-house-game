@@ -1,6 +1,6 @@
 # KalahStandardStarter
 
-The starter kit for the standard version of Kalah.
+The starter kit for the "multi variants" version of Kalah.
 
 **Note** This repo is set up to run a continuous integration (CI) workflow on
 any **push to the `submission` branch** only (not to any other branch). It is
@@ -87,17 +87,53 @@ Game over
 <li>P2 moves again, this time choosing house 5. The 5 seeds this time wrap on to P1's side (including 1 in P2's store), adding seeds to P1's houses 1, 2 and 3.</li>
 </ol>
 
+### Extra Features
+
+In addition to what's described above, two features are asked for. One
+("vertical orientation"), provides the option that
+the board is oriented vertically, as in:
+<pre>
++-------+-------+
+|       | P2  0 |
++---------------+
+| 1[ 4] | 6[ 4] |
+| 2[ 4] | 5[ 4] |
+| 3[ 4] | 4[ 4] |
+| 4[ 4] | 3[ 4] |
+| 5[ 4] | 2[ 4] |
+| 6[ 4] | 1[ 4] |
++-------|-------+
+| P1  0 |       |
++-------+-------+
+</pre>
+
+The second feature is to provide the option that the second player (P2)
+is played by the computer. The strategy followed by the computer
+("best first move") is:
+  <ol>
+    <li>
+    First choose the lowest-numbered house that leads to an additional move
+    (last seed is sown in the player's store), or
+    <li>
+    then there is no such move, then choose the lowest-numbered house that
+    leads to a capture, or
+    <li>
+    finally if there is no such move then choose the lowest-numbered (first) house
+    that has a legal move.
+  </ol>
 
 ## Repository Contents
 1. `Makefile` - build script for `make`. Supports building implementation and running tests (see below)
 1. `README.md` - this file (markdown) 
 2. `resources` - directory containing:
     * `IO.html` - documentation for `IO` interface in test infrastructure
-    * `kalah20200717.jar` - `jar` file containing infrastructure, including test class and test specifications. Has to be on the classpath for compiling and testing
-    * `test_specifications` - directory containing the specifications for the tests. This is what is in the jar file, but has been unpacked for easy access. See below for description of contents
+    * `kalah-compsci701-a2-20210731.jar` - `jar` file containing infrastructure, including test class and test specifications. Has to be on the classpath for compiling and testing
+    * `test-ST-6-4-SK-H-H-SH` - directory containing the specifications for the tests for the original (horizontal, 2 human players) variant. This is what is in the jar file, but has been unpacked for easy access.
+    * `test-ST-6-4-SK-H-H-SV` - directory containing the specifications for the tests for the horizontal orientation variant. This is what is in the jar file, but has been unpacked for easy access.
+    * `test-ST-6-4-SK-H-BMF-SH` - directory containing the specifications for the tests for the best move first robot variant. This is what is in the jar file, but has been unpacked for easy access. 
     *  `junit-3.8.2.jar` - `jar` file for 3.8 JUnit. Has to be on classpath for testing.
 3. `src/kalah` - directory containing:
-    * `Kalah.java` - Stub class for Kalah set up to use test infrastructure. The CI will perform all of the testing by calling the `void play(IO)` method so this is what you need to implement.
+    * `Kalah.java` - Stub class for Kalah set up to use test infrastructure. The CI will perform all of the testing by calling the `void play(IO,boolean,boolean)` method so this is what you need to implement.
 
 ## Test Infrastructure
 

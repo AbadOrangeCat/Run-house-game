@@ -2,7 +2,6 @@ package kalah;
 
 //This class is responsible for setting the initial state of the game and recording the state in the game.
 public class Player_state {
-	// The current state of the game.
 	int[] current_state;
 
 	// List position 0 to 5, is player house, position 6 is player score pool.
