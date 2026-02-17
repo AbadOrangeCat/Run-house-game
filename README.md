@@ -228,8 +228,3 @@ java -cp resources/junit-3.8.2.jar:resources/kalah20200717.jar:bin kalah.Kalah
 - This game is text-based on purpose. It is designed for easy testing and clear output.
 - There is no computer AI player. It is meant for two humans taking turns.
 
----
-
-## License
-This repository does not include a license file.  
-If you plan to share or reuse this code broadly, consider adding a license first.
